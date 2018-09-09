@@ -1,0 +1,87 @@
+
+
+<div class="row">
+  <div class="col-xs-12">
+    <div class="container">
+    <h1>  <%= @post.title %></h1>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+<div class="col-xs-7" >
+
+      <br>
+      <br>
+      <br>
+      <div align="center">
+      <p>
+        <strong>Restaurant Name:</strong>
+        <%= @restaurant.name %>
+      </p>
+      <p>
+        <strong>Restaurant Rating:</strong>
+        <%= @restaurant.rating %>
+      </p>
+
+      <p>
+        <strong>Review:</strong>
+        <%= @post.text %>
+      </p>
+      <p>
+        <strong>Restaurant Website:</strong>
+        <%= @restaurant.weblink %>
+      </p>
+      <p>
+        <strong>Restaurant Phone Number:</strong>
+        <%= @restaurant.phone %>
+      </p>
+      <p>
+        <strong>Address:</strong>
+        <%= @post.address %>
+      </p>
+      </div>
+      
+  </div>
+  <br>
+<p><%= link_to 'Edit', edit_pages_post_path(@post) %></p>
+
+  <div class="col-xs-5">
+    <div id="map-container">
+    <div id="map-canvas" class = "map"></div>
+    </div>
+    <br>
+    <div id="map"></div>
+  </div>
+</div>
+<br>
+
+<div class="row">
+<div class="col-xs-12" >
+
+<p>
+  <strong> Photo Album: </strong>
+  <br>
+  
+  <% (0.. (@post.image.size-1)).each do |i| %>
+  	<%= image_tag(@post.image[i] , width: 300) if @post.image[0].present? %>
+  <% end %>
+</p>
+</div>
+</div>
+<script>
+      function initMap() {
+        var pos = {lat:   <%= @post.latitude %>, lng: <%= @post.longitude %>};
+        var map = new google.maps.Map(document.getElementById('map-canvas'), {
+          zoom: 15,
+          center: pos
+        });
+        var marker = new google.maps.Marker({
+          position: pos,
+          map: map
+        });
+      }
+</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTcV5mNObqk8XvaK9ZMnXbD6EFhB0lK1s&callback=initMap">
+    </script>

@@ -1,0 +1,97 @@
+<h1> Edit </h1>
+<%= form_for :post, url: pages_post_path(@post), method: patch do |f| %>
+  
+  <fieldset>
+
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Title</label>
+      <div class="col-md-6">
+      <%= f.text_field :title, autofocus: true, placeholder: "Title (Required)" ,class: "form-control input-md", :required => true%>
+      <!--<input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"> -->
+      <br>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Address</label>
+      <div class="col-md-6">
+      <%= f.text_field :address, placeholder: "123 Street, City, Province, Country (Required)", :required => true,
+       class: "form-control input-mid" %>
+    <br>
+      </div>
+    </div>
+    <br>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Upload Pictures</label>
+      <div class="col-md-6">
+      <%= f.file_field :image, multiple: true, class: "form-control input-mid" %>
+    <br>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="text">Review</label>
+      <div class="col-md-4">
+          <%= f.text_area :text, class: "form-control col-md-6 input-mid", placeholder: "Review", row: 5%>
+      </div>
+    </div>
+
+
+
+
+
+</fieldset>
+<br>
+<%= fields_for :restaurant do |r| %>
+
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Restaurant Name</label>
+  <div class="col-md-6">
+  <%= r.text_field :name, placeholder: "Name of Restaurant (Required)" ,class: "form-control input-md", :required => true%>
+  <!--<input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"> -->
+  <br>
+  </div>
+</div>
+<br>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Phone Number</label>
+  <div class="col-md-6">
+  <%= r.text_field :phone, placeholder: "Phone number (Optional)" ,class: "form-control input-md"%>
+  <!--<input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"> -->
+  <br>
+  </div>
+</div>
+<br>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Website</label>
+  <div class="col-md-6">
+  <%= r.text_field :weblink, placeholder: "Website (Optional)" ,class: "form-control input-md"%>
+  <!--<input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"> -->
+  <br>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput"> Rating</label>
+  <div class="col-md-6">
+  <%= r.select :rating, [['1', 1], ['2', 2], ['3',3],['4',4],['5',5]], {}, {class: "form-control"} %>
+  <!--<input id="textinput" name="textinput" type="text" placeholder="placeholder" class="form-control input-md"> -->
+  <br>
+  </div>
+</div>
+
+
+<%end%>
+
+<br>
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <div class="col-md-4">
+
+    <%= f.submit "Submit", class: "btn btn-primary btn-block"%>
+
+  </div>
+</div>
+<% end %>
+

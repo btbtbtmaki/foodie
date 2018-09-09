@@ -1,0 +1,112 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+    margin-top: 50px;
+    /* Required margin for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    text-align: center;
+
+}
+
+.jumbotron{
+
+  color:white !important;
+  color: white;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+#home_page{
+
+  background: url('AdobeStock_97456545_WM.jpeg') no-repeat center center scroll;
+
+
+
+}
+.image-bg-fluid-height,
+.image-bg-fixed-height {
+    color: white;
+    text-align: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.image-bg-fluid-height {
+	background: url('AdobeStock_97456545_WM.jpeg') no-repeat center center scroll;
+    padding: 100px 0;
+    /* width: 100%; */
+}
+
+.image-bg-fixed-height {
+	background: url('AdobeStock_88734350_WM.jpeg') no-repeat center center scroll;
+    height: 450px;
+}
+
+.img-center {
+	margin: 0 auto;
+}
+
+section {
+    padding: 75px 0;
+}
+
+.section-heading {
+    margin: 30px 0;
+    font-size: 4em;
+}
+
+.section-lead {
+    margin: 30px 0;
+}
+
+.section-paragraph {
+    margin: 30px 0;
+}
+
+
+.service-box {
+  max-width: 400px;
+  margin: 50px auto 0;
+}
+@media (min-width: 992px) {
+  .service-box {
+    margin: 20px auto 0;
+  }
+}
+.service-box p {
+  margin-bottom: 0;
+}
+
+
+.fa {
+  color:  #009933;
+}
+
+
+footer {
+    margin: 50px 0;
+}
+
+@media(max-width:768px) {
+    section {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .section-heading {
+        font-size: 2em;
+    }
+}
+
+.table{
+  text-align: left !important;
+}
+
+
+// for post form
